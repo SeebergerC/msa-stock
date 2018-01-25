@@ -1,13 +1,12 @@
 package com.predic8.workshop.stock.event;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.HashMap;
 import java.util.Map;
 
-import static net.logstash.logback.marker.Markers.appendEntries;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.fasterxml.jackson.databind.JsonNode;
 
 public class Operation {
 
@@ -52,13 +51,13 @@ public class Operation {
 
 	private void log(String direction) {
 
-		Map<String,Object> entries = new HashMap();
-		entries.put("bo",bo);
+		Map<String, Object> entries = new HashMap();
+		entries.put("bo", bo);
 		entries.put("action", action);
 		entries.put("object", object);
 		entries.put("direction", direction);
 
-		log.info(appendEntries(entries),"");
+		// log.info(appendEntries(entries), "");
 	}
 
 }
